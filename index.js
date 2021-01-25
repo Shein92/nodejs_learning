@@ -67,11 +67,12 @@ app.use('/card', cardRoutes);
 // })
 
 const PORT = process.env.PORT || 3000;
+const pass = process.env.PASS
 
 async function start() {
 
 	try {
-		const url = 'mongodb+srv://Shein92:Locard1992@cluster0.1otci.mongodb.net/shop';
+		const url = `mongodb+srv://Shein92:${pass}@cluster0.1otci.mongodb.net/shop`;
 		//<dbname>?retryWrites=true&w=majority
 
 		await mongoose.connect(url, {
@@ -101,5 +102,3 @@ async function start() {
 }
 
 start();
-
-const pass = "Locard1992";
